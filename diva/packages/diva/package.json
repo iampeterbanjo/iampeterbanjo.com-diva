@@ -1,0 +1,15 @@
+{
+	"name": "@iampeterbanjo/diva",
+	"version": "1.0.0",
+	"description": "Personal formatting configurations",
+	"main": "index.json",
+	"keywords": [
+		"prettier",
+		"config"
+	],
+	"license": "ISC",
+	"author": {
+		"email": "npm@iampeterbanjo.com",
+		"name": "Peter Banjo"
+	}
+}
