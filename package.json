@@ -1,0 +1,69 @@
+{
+	"name": "site",
+	"version": "1.0.0",
+	"description": "Personal portfolio",
+	"main": "index.js",
+	"engines": {
+		"node": "10.14.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/iampeterbanjo/iampeterbanjo.com.git"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged"
+		}
+	},
+	"homepage": "https://iampeterbanjo.com",
+	"scripts": {
+		"build": "npm-run-all build-*",
+		"build-css": "cd ./packages/css; npm run build && npm link",
+		"build-server": "cd ./packages/server; npm run build",
+		"clean-css": "cd ./packages/css; rm -rf main.css node_modules",
+		"clean-data": "cd ./packages/data; rm -rf node_modules",
+		"clean-docs": "cd ./packages/docs; rm -rf node_modules",
+		"clean-e2e": "cd ./packages/e2e; rm -rf node_modules",
+		"clean-server": "cd ./packages/server; rm -rf node_modules",
+		"clean": "npm-run-all clean-*; rm -rf node_modules",
+		"deploy": "npm run lint && npm run test && git push && git push github",
+		"dev": "npm-run-all install-*",
+		"diva": "cd ./packages/diva;",
+		"docs-adr": "cd ./packages/docs; npx adr",
+		"dry-run": "npm run build && npm run start",
+		"postinstall": "if test \"$NODE_ENV\" = \"production\"; then npm run prod; else npm run dev; fi",
+		"install-css": "cd ./packages/css; npm install",
+		"install-data": "cd ./packages/data; npm install",
+		"install-docs": "cd ./packages/docs; npm install",
+		"install-e2e": "cd ./packages/e2e; npm install",
+		"install-server": "cd ./packages/server; npm install",
+		"server": "cd ./packages/server; npm",
+		"format": "pretty-quick",
+		"lint": "npx eslint \"**/*.{ts,js}\" --fix",
+		"prod": "npm-run-all install-server install-css build-css build-server",
+		"start-dev": "cd ./packages/server; npm run dev",
+		"start": "node ./packages/server/build/start.js",
+		"test-data": "cd ./packages/data; npm run test",
+		"test-e2e": "cd ./packages/e2e; npm run test",
+		"test-server": "cd ./packages/server; npm run test",
+		"test": "npx npm-run-all test-*",
+		"watch-server-test": "cd ./packages/server; npm run watch-test"
+	},
+	"keywords": [
+		"personal",
+		"portfolio",
+		"hapi",
+		"gatsby",
+		"react",
+		"tachyons"
+	],
+	"author": {
+		"email": "github@iampeterbanjo.com",
+		"name": "Peter Banjo"
+	},
+	"license": "ISC",
+	"private": true,
+	"devDependencies": {
+		"npm-run-all": "^4.1.5"
+	}
+}

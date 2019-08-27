@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"declaration": true,
+		"declarationMap": true,
+		"esModuleInterop": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": false,
+		"pretty": true,
+		"sourceMap": true,
+		"strict": true,
+		"target": "es2017",
+		"lib": ["es2017", "dom"],
+		"noImplicitAny": false,
+		"resolveJsonModule": true
+	},
+	"exclude": ["node_modules", "build"]
+}

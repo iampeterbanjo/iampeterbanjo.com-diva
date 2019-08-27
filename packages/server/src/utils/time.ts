@@ -1,0 +1,10 @@
+// all time in milliseconds
+export const tenSeconds = 10000;
+export const oneHundredMilliseconds = 100;
+export const oneMinute = 60000;
+export const fifteenMinutes = 900000;
+export const oneHour = 3600000;
+export const oneDay = 86400000;
+export const oneYear = 31556900000;
+export const oneMonth = 2629746000;
+export const oneWeek = 604800000;
